@@ -13,7 +13,7 @@ This repository contains molecular dynamics (MD) simulation datasets for three i
 - # Simulation Details
 - 
 - # **LAMP2A System**
-------**Monomer**
+-    **Monomer**
        **Replica_1** 
        **Replica_2** 
        **Replica_3** 
