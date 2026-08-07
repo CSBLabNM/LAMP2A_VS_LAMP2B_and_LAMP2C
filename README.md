@@ -11,6 +11,28 @@ This repository contains molecular dynamics (MD) simulation datasets for three i
 - **trj.xtc** (Compressed trajectory file containing the simulation trajectory.)
 
 - # Simulation Details
+## System A
+
+### Monomer
+
+- rep1
+- rep2
+- rep3
+
+### Trimer
+
+#### WT
+
+- rep1
+- rep2
+- rep3
+
+#### Mut
+
+- rep1
+- rep2
+- rep3
+
 
 - # **LAMP2A System**
 - #   **Monomer**
