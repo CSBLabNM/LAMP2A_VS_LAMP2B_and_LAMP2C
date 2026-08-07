@@ -14,79 +14,24 @@ This repository contains molecular dynamics (MD) simulation datasets for three i
 ## System A
 
 ### Monomer
-
-- rep1
-- rep2
-- rep3
+- Replica_1
+- Replica_2
+- Replica_3
 
 ### Trimer
 
-#### WT
+#### Wild Type
+- Replica_1
+- Replica_2
+- Replica_3
+- Replica_4
+- Replica_5
 
-- rep1
-- rep2
-- rep3
+#### Mutant
 
-#### Mut
+- Replica_1
+- Replica_2
+- Replica_3
 
-- rep1
-- rep2
-- rep3
-
-
-- # **LAMP2A System**
-- #   **Monomer**
-- #      **Replica_1** 
-- #      **Replica_2** 
-- #      **Replica_3** 
-------**Trimer**
-          **Wild Type**
-           **Replica_1** 
-           **Replica_2** 
-           **Replica_3** 
-           **Replica_4**
-           **Replica_5**
-------**Trimer**
-          **Mutant Type**
-           **Replica_1** 
-           **Replica_2** 
-           **Replica_3** 
-
-- # **LAMP2B System**
-------**Monomer**
-       **Replica_1** 
-       **Replica_2** 
-       **Replica_3** 
-------**Trimer**
-          **Wild Type**
-           **Replica_1** 
-           **Replica_2** 
-           **Replica_3** 
-           **Replica_4**
-           **Replica_5**
-------**Trimer**
-          **Mutant Type**
-           **Replica_1** 
-           **Replica_2** 
-           **Replica_3** 
-
-- # **LAMP2C System**
-------**Monomer**
-       **Replica_1** 
-       **Replica_2** 
-       **Replica_3** 
-------**Trimer**
-          **Wild Type**
-           **Replica_1** 
-           **Replica_2** 
-           **Replica_3** 
-           **Replica_4**
-           **Replica_5**
-------**Trimer**
-          **Mutant Type**
-           **Replica_1** 
-           **Replica_2** 
-           **Replica_3**            
-             
 
 
