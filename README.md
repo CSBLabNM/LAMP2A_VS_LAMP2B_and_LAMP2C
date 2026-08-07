@@ -1,12 +1,70 @@
 # LAMP2A_VS_LAMP2B_and_LAMP2C
 # **Isoform-specific stabilization of LAMP2A oligomers provides a structural basis for chaperone-mediated autophagy**
 # Overview
-This repository contains molecular dynamics (MD) simulation datasets for both monomeric and homotrimeric assemblies of the human Lysosome-Associated Membrane Protein 2A (LAMP2A). The simulations encompass wild-type (WT) systems in which histidine residues at positions 402–404 were modeled in either their neutral (0) or protonated (+1) states, yielding five distinct protonation combinations: 1000, 1100, 1010, 1001, and 1111. In addition, an inactive mutant variant of LAMP2A was simulated within a biologically relevant lysosomal membrane environment.
-Each system was subjected to microsecond-scale MD simulations: three replicas for the trimeric assemblies and two replicas for the monomeric systems, with trajectories extending to 1000 ns per replica. All simulations were performed using GROMACS, enabling detailed investigation of the structural and dynamical consequences of the protonation states and the mutation on LAMP2A stability and function.
+This repository contains molecular dynamics (MD) simulation datasets for three isoforms of Lysosome-Associated Membrane Protein, **LAMP2A**, **LAMP2B**, and **LAMP2C**, in both their monomeric and trimeric forms. For each system, simulations were performed for the monomer as well as the trimeric wild-type (WT) and mutant (Mut) variants within a biologically relevant lysosomal membrane environment. Independent replicas were generated for every simulation to ensure reproducibility and robust statistical sampling with trajectories extending to 1000 ns per replica. Each replica contains the initial structure (.pdb), the final structure (.pdb) and the corresponding production trajectory (.xtc). All simulations were performed using GROMACS under identical simulation protocols, providing a consistent framework for comparing the structural and dynamical behavior of the three systems across different monomeric and trimeric states and variants. This repository is organized to facilitate reproducible analysis and straightforward comparison between systems, simulation replicas, and structural forms.
 
 # **Repository Contents**
 
 # File Description
-- **initial.pdb** (The initial structure of protein embedded in a lipid bilayer, used for simulation.)
-- **final.pdb** (The final structure of the system after 1000 ns MD simulation.)
+- **initial.pdb** (The initial structure of protein embedded in a lipid bilayer obtained after equilibration, used for production simulation.)
+- **trj_final.pdb** (The final structure of the system after 1000 ns MD simulation.)
 - **trj.xtc** (Compressed trajectory file containing the simulation trajectory.)
+
+- # Simulation Details
+- 
+- # **LAMP2A System**
+------**Monomer**
+       **Replica_1** 
+       **Replica_2** 
+       **Replica_3** 
+------**Trimer**
+          **Wild Type**
+           **Replica_1** 
+           **Replica_2** 
+           **Replica_3** 
+           **Replica_4**
+           **Replica_5**
+------**Trimer**
+          **Mutant Type**
+           **Replica_1** 
+           **Replica_2** 
+           **Replica_3** 
+
+- # **LAMP2B System**
+------**Monomer**
+       **Replica_1** 
+       **Replica_2** 
+       **Replica_3** 
+------**Trimer**
+          **Wild Type**
+           **Replica_1** 
+           **Replica_2** 
+           **Replica_3** 
+           **Replica_4**
+           **Replica_5**
+------**Trimer**
+          **Mutant Type**
+           **Replica_1** 
+           **Replica_2** 
+           **Replica_3** 
+
+- # **LAMP2C System**
+------**Monomer**
+       **Replica_1** 
+       **Replica_2** 
+       **Replica_3** 
+------**Trimer**
+          **Wild Type**
+           **Replica_1** 
+           **Replica_2** 
+           **Replica_3** 
+           **Replica_4**
+           **Replica_5**
+------**Trimer**
+          **Mutant Type**
+           **Replica_1** 
+           **Replica_2** 
+           **Replica_3**            
+             
+
+
