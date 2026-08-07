@@ -79,4 +79,18 @@ This repository contains molecular dynamics (MD) simulation datasets for three i
 - Replica_2
 - Replica_3
 
+- # Analysis Tools
+
+- **GROMACS** (Trajectory analysis)
+
+- **VMD/ChimeraX/PyMOL** (Structural visualization)
+
+- **PyLipID** (Lipid interaction analysis)
+
+- **DSSP** (Secondary structure analysis)
+
+- **python** (Trajectory analysis)
+
+# Objective and Significance
+This study systematically compare the monomeric and trimeric assemblies of all three LAMP2 isoforms to elucidate the structural basis of CMA specificity. Using 33 μs of all-atom molecular dynamics simulations, free-energy calculations based on umbrella sampling, and computational protein redesign approach, we demonstrate that LAMP2A exhibits a significantly greater propensity to form stable trimeric assemblies compared to the LAMP2B and LAMP2C.
 
