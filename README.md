@@ -1,117 +1,176 @@
 # LAMP2A_VS_LAMP2B_and_LAMP2C
+
 # **Isoform-specific stabilization of LAMP2A oligomers provides a structural basis for chaperone-mediated autophagy**
-# Overview
-This repository contains molecular dynamics (MD) simulation datasets for three isoforms of Lysosome-Associated Membrane Protein, **LAMP2A**, **LAMP2B**, and **LAMP2C**, in both their monomeric and trimeric forms. For each system, simulations were performed for the monomer as well as the trimeric wild-type and mutant variants within a biologically relevant lysosomal membrane environment. Independent replicas were generated for every simulation to ensure reproducibility and robust statistical sampling with trajectories extending to 1000 ns per replica. Each replica contains the initial structure (.pdb) obtained after equilibration, the final structure (.pdb) and the corresponding production trajectory (.xtc). All simulations were performed using GROMACS under identical simulation protocols, providing a consistent framework for comparing the structural and dynamical behavior of the three systems across different monomeric and trimeric states and variants. This repository is organized to facilitate reproducible analysis and straightforward comparison between systems, simulation replicas, and structural forms.
 
-# **Repository Contents**
+---
 
-# File Description
-- **initial.pdb** (The initial structure of protein embedded in a lipid bilayer obtained after equilibration, used for production simulation.)
-- **trj_final.pdb** (The final structure of the system after 1000 ns MD simulation.)
-- **trj.xtc** (Compressed trajectory file containing the simulation trajectory.)
-- **topol.top** (GROMACS topology file defining the molecular composition, force-field parameters, and topology include files required for the simulation.)
-- **system.tpr** (Compiled GROMACS run input file generated using gmx grompp, containing the simulation parameters, topology information, and starting coordinates required to run the simulation.)
-- **forcefiled.itp** (Force-field include file defining the force-field parameters and settings required for the molecular system.)
-- **BMGP.itp, CHL1.itp, CLA.itp, LSM.itp, PLPC.itp, PLPE.itp, PROA.itp, PROB.itp, PROC.itp, PSM.itp, SAPC.itp, SAPE.itp, SAPI.itp, SAPS.itp, SDPC.itp, SDPI.itp, SDPS.itp, SOD.itp, and TIP3.itp** (GROMACS topology include files defining the molecular topology of the corresponding lipid species, protein components, ions, and water model present in the simulated system. These files provide the relevant atom types, bonded interactions, and other topology parameters, as applicable, and are included in topol.top to describe the molecular composition of the system.)
-- ### Molecular Dynamics Parameter Files (`.mdp`)
+## Overview
 
-- **`Standard_MD/`**: Contains the GROMACS molecular dynamics parameter files used for energy minimization, system equilibration, and production simulations.
-  - **`step_minimization.mdp`**: Defines the parameters for energy minimization to optimize the initial system geometry and relieve unfavorable atomic contacts.
-  - **`step1.1_equilibration.mdp` – `step1.6_equilibration.mdp`**: Define the parameters for the sequential equilibration stages used to stabilize the system before production simulation.
-  - **`step_production.mdp`**: Specifies the simulation parameters for the production molecular dynamics run.
+This repository contains molecular dynamics (MD) simulation datasets for three isoforms of lysosome-associated membrane protein 2, **LAMP2A, LAMP2B, and LAMP2C**, in both monomeric and trimeric forms.
 
-- **`Umbrella_Sampling_MD/`**: Contains the GROMACS parameter files used for umbrella sampling simulations to investigate the free-energy profile along a selected reaction coordinate.
-  - **`equilibration_umbrella.mdp`**: Defines the equilibration parameters for the umbrella sampling windows before production sampling.
-  - **`pull.mdp`**: Specifies the pulling parameters used to generate configurations along the selected reaction coordinate for umbrella sampling.
-  - **`production_umbrella.mdp`**: Defines the production simulation parameters for collecting sampling data in individual umbrella windows for subsequent potential of mean force (PMF) calculations.
+For each isoform, simulations were performed for monomeric systems and trimeric wild-type and mutant variants within a biologically relevant lysosomal membrane environment. Independent replicas were generated to ensure reproducibility and robust statistical sampling, with production trajectories extending to **1,000 ns per replica**, where applicable.
 
-- # Simulation Details
-## LAMP2A System
+Each replica includes the initial structure (`initial.pdb`) obtained after equilibration, the final structure (`trj_final.pdb`), and the corresponding production trajectory (`trj.xtc`). The repository also provides GROMACS topology files, simulation parameter files, and analysis scripts.
 
-### Monomer
-- Replica_1
-- Replica_2
-- Replica_3
+All simulations were performed using **GROMACS** under consistent simulation protocols, providing a framework for comparing the structural and dynamical behavior of the three LAMP2 isoforms across different oligomeric states and variants.
 
-### Trimer
+---
 
-#### Wild Type
-- Replica_1
-- Replica_2
-- Replica_3
-- Replica_4
-- Replica_5
+## **Study Highlights**
 
-#### Mutant
+- **Three LAMP2 isoforms:** LAMP2A, LAMP2B, and LAMP2C.
+- **Oligomeric states:** Monomeric and trimeric systems.
+- **Wild-type and mutant variants:** Comparative analysis of trimeric assemblies.
+- **Long-timescale simulations:** Production trajectories extending to 1,000 ns per replica, where applicable.
+- **Independent replicas:** Multiple simulation replicas to support reproducibility and statistical analysis.
+- **Free-energy calculations:** Umbrella sampling along a selected reaction coordinate.
+- **Membrane-associated analysis:** Characterization of protein–lipid interactions, trimer cavity properties, lipid insertion, and protein orientation.
 
-- Replica_1
-- Replica_2
-- Replica_3
+---
 
+## **Repository Contents**
 
-## LAMP2B System
+### **1. Structural and Trajectory Files**
 
-### Monomer
-- Replica_1
-- Replica_2
-- Replica_3
+- **`initial.pdb`**: Initial structure of the protein embedded in the lipid bilayer after equilibration, used to initiate the production simulation.
 
-### Trimer
+- **`trj_final.pdb`**: Final structure of the system after the production molecular dynamics simulation.
 
-#### Wild Type
-- Replica_1
-- Replica_2
-- Replica_3
-- Replica_4
-- Replica_5
+- **`trj.xtc`**: Compressed GROMACS trajectory containing time-dependent molecular coordinates.
 
-#### Mutant
+- **`system.tpr`**: Compiled GROMACS run input file generated using `gmx grompp`, containing simulation parameters, topology information, and starting coordinates.
 
-- Replica_1
-- Replica_2
-- Replica_3
+### **2. Molecular Topology Files**
 
+- **`topol.top`**: Main GROMACS topology file defining the molecular composition of the system and including the required force-field and molecular topology files.
 
-## LAMP2C System
+- **`forcefield.itp`**: Force-field include file defining the force-field parameters and settings required for the molecular system.
 
-### Monomer
-- Replica_1
-- Replica_2
-- Replica_3
+- **`BMGP.itp`, `CHL1.itp`, `CLA.itp`, `LSM.itp`, `PLPC.itp`, `PLPE.itp`, `PROA.itp`, `PROB.itp`, `PROC.itp`, `PSM.itp`, `SAPC.itp`, `SAPE.itp`, `SAPI.itp`, `SAPS.itp`, `SDPC.itp`, `SDPI.itp`, `SDPS.itp`, `SOD.itp`, and `TIP3.itp`**: GROMACS topology include files defining the molecular topology of the corresponding molecular species and system components. These files provide atom types, bonded interactions, and other relevant topology parameters, as applicable, and are included in `topol.top`.
 
-### Trimer
+### **3. Molecular Dynamics Parameter Files (`.mdp`)**
 
-#### Wild Type
-- Replica_1
-- Replica_2
-- Replica_3
-- Replica_4
-- Replica_5
+The repository includes separate molecular dynamics parameter files for standard MD simulations and umbrella sampling.
 
-#### Mutant
+#### **Standard Molecular Dynamics — `Standard_MD/`**
 
-- Replica_1
-- Replica_2
-- Replica_3
+- **`step_minimization.mdp`**: Defines the parameters for energy minimization to optimize the initial system geometry and relieve unfavorable atomic contacts.
 
-- # Analysis Tools
+- **`step1.1_equilibration.mdp` – `step1.6_equilibration.mdp`**: Define the parameters for sequential equilibration stages used to stabilize the system before production simulation.
 
-- **GROMACS** (Trajectory analysis)
+- **`step_production.mdp`**: Specifies the simulation parameters for the production molecular dynamics run.
 
-- **VMD/ChimeraX/PyMOL** (Structural visualization)
+- **`mdout.mdp`**: Contains the processed molecular dynamics parameters generated during GROMACS preprocessing.
 
-- **PyLipID** (Lipid interaction analysis)
+#### **Umbrella Sampling — `Umbrella_Sampling_MD/`**
 
-- **DSSP** (Secondary structure analysis)
+- **`equilibration_umbrella.mdp`**: Defines the equilibration parameters for the umbrella sampling windows before production sampling.
 
-- **python** (Trajectory analysis)
+- **`pull.mdp`**: Specifies the pulling parameters used to generate configurations along the selected reaction coordinate.
 
-- ### Analysis Scripts
+- **`production_umbrella.mdp`**: Defines the production simulation parameters for individual umbrella windows used to collect sampling data for subsequent potential of mean force (PMF) calculations.
+
+---
+
+## **Simulation Details**
+
+The simulation datasets are organized by LAMP2 isoform, oligomeric state, and variant. Each replica represents an independent simulation run.
+
+### **LAMP2A System**
+
+#### **Monomer**
+- `Replica_1`
+- `Replica_2`
+- `Replica_3`
+
+#### **Trimer — Wild Type**
+- `Replica_1`
+- `Replica_2`
+- `Replica_3`
+- `Replica_4`
+- `Replica_5`
+
+#### **Trimer — Mutant**
+- `Replica_1`
+- `Replica_2`
+- `Replica_3`
+
+### **LAMP2B System**
+
+#### **Monomer**
+- `Replica_1`
+- `Replica_2`
+- `Replica_3`
+
+#### **Trimer — Wild Type**
+- `Replica_1`
+- `Replica_2`
+- `Replica_3`
+- `Replica_4`
+- `Replica_5`
+
+#### **Trimer — Mutant**
+- `Replica_1`
+- `Replica_2`
+- `Replica_3`
+
+### **LAMP2C System**
+
+#### **Monomer**
+- `Replica_1`
+- `Replica_2`
+- `Replica_3`
+
+#### **Trimer — Wild Type**
+- `Replica_1`
+- `Replica_2`
+- `Replica_3`
+- `Replica_4`
+- `Replica_5`
+
+#### **Trimer — Mutant**
+- `Replica_1`
+- `Replica_2`
+- `Replica_3`
+
+---
+
+## **Analysis Tools**
+
+- **GROMACS**: Molecular dynamics simulations and trajectory analysis.
+- **VMD**: Molecular visualization and Tcl-based structural analysis.
+- **UCSF ChimeraX**: Molecular structure visualization and inspection.
+- **PyLipID**: Lipid interaction and lipid-binding analysis.
+- **DSSP**: Protein secondary-structure assignment.
+- **Python**: Custom trajectory analysis and quantitative data processing.
+
+---
+
+## **Analysis Scripts**
 
 - **`tilt_angle_analysis.tcl`**: VMD Tcl script for analyzing the protein trimer tilt angle relative to the membrane plane or a defined reference axis.
 
-- **`trimer_cavity_and_lipid_insertion_analysis.py`**: Python script for analyzing the trimer cavity and lipid insertion, enabling the characterization of lipid penetration and cavity-associated structural features during molecular dynamics simulations.
+- **`trimer_cavity_and_lipid_insertion_analysis.py`**: Python script for analyzing the trimer cavity and lipid insertion, enabling characterization of lipid penetration and cavity-associated structural features during molecular dynamics simulations.
 
-# Objective and Significance
-This study systematically compare the monomeric and trimeric assemblies of all three LAMP2 isoforms to elucidate the structural basis of CMA specificity. Using 33 μs of all-atom molecular dynamics simulations, free-energy calculations based on umbrella sampling, and computational protein redesign approach, we demonstrate that LAMP2A exhibits a significantly greater propensity to form stable trimeric assemblies compared to the LAMP2B and LAMP2C.
+---
+
+## **Objective and Scientific Significance**
+
+This study systematically compares the monomeric and trimeric assemblies of **LAMP2A, LAMP2B, and LAMP2C** to investigate the structural determinants that may contribute to isoform-specific chaperone-mediated autophagy (CMA).
+
+Using **33 μs of all-atom molecular dynamics simulations**, umbrella sampling-based free-energy calculations, and computational protein redesign, we investigate differences in oligomeric stability, protein–lipid interactions, and trimer-associated structural features across the three isoforms.
+
+The findings indicate that **LAMP2A exhibits a greater propensity to form stable trimeric assemblies than LAMP2B and LAMP2C**, providing a structural framework for investigating the molecular determinants of LAMP2 isoform specificity in CMA.
+
+---
+
+## **Reproducibility and Data Usage**
+
+1. Select the relevant LAMP2 isoform, oligomeric state, variant, and simulation replica.
+2. Use the corresponding molecular structures, topology files, force-field dependencies, and `.mdp` parameter files.
+3. Ensure that a compatible version of **GROMACS** is installed.
+4. Use the provided trajectories and analysis scripts to perform structural and dynamical analyses.
+5. Document any modifications to simulation parameters, analysis selections, or software versions to support reproducibility.
+
+> **Note:** The `.mdp` files specify simulation settings, whereas the `.tpr` file contains compiled simulation inputs generated during GROMACS preprocessing. The `.xtc` file contains trajectory coordinates and may require an appropriate structure or topology file for analysis.
 
