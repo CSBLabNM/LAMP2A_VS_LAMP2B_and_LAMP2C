@@ -139,7 +139,6 @@ The simulation datasets are organized by LAMP2 isoform, oligomeric state, and va
 - **GROMACS**: Molecular dynamics simulations and trajectory analysis.
 - **VMD**: Molecular visualization and Tcl-based structural analysis.
 - **UCSF ChimeraX**: Molecular structure visualization and inspection.
-- **PyLipID**: Lipid interaction and lipid-binding analysis.
 - **DSSP**: Protein secondary-structure assignment.
 - **Python**: Custom trajectory analysis and quantitative data processing.
 
