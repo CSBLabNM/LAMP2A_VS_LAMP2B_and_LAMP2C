@@ -60,7 +60,6 @@ The repository includes separate molecular dynamics parameter files for standard
 
 - **`step_production.mdp`**: Specifies the simulation parameters for the production molecular dynamics run.
 
-- **`mdout.mdp`**: Contains the processed molecular dynamics parameters generated during GROMACS preprocessing.
 
 #### **Umbrella Sampling — `Umbrella_Sampling_MD/`**
 
