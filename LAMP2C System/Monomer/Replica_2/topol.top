@@ -1,0 +1,43 @@
+; Include forcefield parameters
+#include "forcefield.itp"
+#include "PROA.itp"
+#include "CHL1.itp"
+#include "SAPE.itp"
+#include "PLPC.itp"
+#include "SAPI.itp"
+#include "LSM.itp"
+#include "SAPC.itp"
+#include "PLPE.itp"
+#include "BMGP.itp"
+#include "PSM.itp"
+#include "SDPC.itp"
+#include "SAPS.itp"
+#include "SDPI.itp"
+#include "SDPS.itp"
+#include "SOD.itp"
+#include "CLA.itp"
+#include "TIP3.itp"
+
+[ system ]
+; Name
+Title
+
+[ molecules ]
+; Compound	#mols
+PROA  	           1
+CHL1  	          72
+SAPE  	          72
+PLPC  	          44
+SAPI  	          24
+LSM   	          12
+SAPC  	          72
+PLPE  	          28
+BMGP  	          28
+PSM   	          12
+SDPC  	          24
+SAPS  	           8
+SDPI  	           8
+SDPS  	           4
+SOD   	         150
+CLA   	          80
+TIP3  	       29641

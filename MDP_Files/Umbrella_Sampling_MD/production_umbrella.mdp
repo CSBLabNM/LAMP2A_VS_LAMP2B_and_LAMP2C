@@ -1,0 +1,96 @@
+title       = Umbrella sampling production run
+
+; =====================
+; Run parameters
+; =====================
+integrator  = md
+dt          = 0.002
+tinit       = 0
+nsteps      = 5000000      ; 10 ns per window
+nstcomm     = 10
+
+; =====================
+; Output parameters
+; =====================
+nstxout-compressed  = 5000
+nstenergy           = 5000
+
+; =====================
+; Bond constraints
+; =====================
+constraint_algorithm = lincs
+constraints          = h-bonds
+lincs_iter           = 1
+lincs_order          = 4
+
+; =====================
+; Neighbor searching
+; =====================
+cutoff-scheme   = Verlet
+nstlist         = 20
+rlist           = 1.4
+rcoulomb        = 1.4
+rvdw            = 1.4
+
+; =====================
+; Electrostatics
+; =====================
+coulombtype     = PME
+fourierspacing  = 0.12
+pme_order       = 4
+ewald_rtol      = 1e-5
+
+; =====================
+; Temperature coupling (production)
+; =====================
+tcoupl      = Nose-Hoover
+tc-grps     = Protein Non-Protein
+tau_t       = 1.0  1.0
+ref_t       = 310.15  310.15
+
+; =====================
+; Pressure coupling (production)
+; =====================
+pcoupl          = Parrinello-Rahman
+pcoupltype      = isotropic
+tau_p           = 2.0
+compressibility = 4.5e-5
+ref_p           = 1.0
+refcoord_scaling = com
+
+; =====================
+; Velocities
+; =====================
+continuation = yes
+gen_vel      = no
+
+; =====================
+; PBC & dispersion
+; =====================
+pbc         = xyz
+DispCorr    = EnerPres
+
+; =====================
+; Pull code (umbrella sampling)
+; =====================
+pull                    = yes
+pull-ncoords            = 1
+pull-ngroups            = 2
+
+pull-group1-name        = Chain_A
+pull-group2-name        = Chain_B
+
+pull-group1-pbcatom     = 637
+pull-group2-pbcatom     = 1593
+pull-pbc-ref-prev-step-com = yes
+
+pull-coord1-type        = umbrella
+pull-coord1-geometry    = direction
+pull-coord1-dim         = N N Y
+pull-coord1-vec         = 0 0 1
+pull-coord1-groups      = 1 2
+
+pull-coord1-start       = yes
+pull-coord1-rate        = 0.0        ; FIXED distance (umbrella window)
+pull-coord1-k           = 1000
+
