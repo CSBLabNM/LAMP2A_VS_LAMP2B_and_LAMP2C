@@ -19,7 +19,6 @@ This repository contains molecular dynamics (MD) simulation datasets for three i
   - **`step_minimization.mdp`**: Defines the parameters for energy minimization to optimize the initial system geometry and relieve unfavorable atomic contacts.
   - **`step1.1_equilibration.mdp` – `step1.6_equilibration.mdp`**: Define the parameters for the sequential equilibration stages used to stabilize the system before production simulation.
   - **`step_production.mdp`**: Specifies the simulation parameters for the production molecular dynamics run.
-  - **`mdout.mdp`**: Contains the processed molecular dynamics parameters generated during GROMACS preprocessing.
 
 - **`Umbrella_Sampling_MD/`**: Contains the GROMACS parameter files used for umbrella sampling simulations to investigate the free-energy profile along a selected reaction coordinate.
   - **`equilibration_umbrella.mdp`**: Defines the equilibration parameters for the umbrella sampling windows before production sampling.
