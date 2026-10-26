@@ -9,6 +9,22 @@ This repository contains molecular dynamics (MD) simulation datasets for three i
 - **initial.pdb** (The initial structure of protein embedded in a lipid bilayer obtained after equilibration, used for production simulation.)
 - **trj_final.pdb** (The final structure of the system after 1000 ns MD simulation.)
 - **trj.xtc** (Compressed trajectory file containing the simulation trajectory.)
+- **topol.top** (GROMACS topology file defining the molecular composition, force-field parameters, and topology include files required for the simulation.)
+- **system.tpr** (Compiled GROMACS run input file generated using gmx grompp, containing the simulation parameters, topology information, and starting coordinates required to run the simulation.)
+- **forcefiled.itp** (Force-field include file defining the force-field parameters and settings required for the molecular system.)
+- **BMGP.itp, CHL1.itp, CLA.itp, LSM.itp, PLPC.itp, PLPE.itp, PROA.itp, PROB.itp, PROC.itp, PSM.itp, SAPC.itp, SAPE.itp, SAPI.itp, SAPS.itp, SDPC.itp, SDPI.itp, SDPS.itp, SOD.itp, and TIP3.itp** (GROMACS topology include files defining the molecular topology of the corresponding lipid species, protein components, ions, and water model present in the simulated system. These files provide the relevant atom types, bonded interactions, and other topology parameters, as applicable, and are included in topol.top to describe the molecular composition of the system.)
+- ### Molecular Dynamics Parameter Files (`.mdp`)
+
+- **`Standard_MD/`**: Contains the GROMACS molecular dynamics parameter files used for energy minimization, system equilibration, and production simulations.
+  - **`step_minimization.mdp`**: Defines the parameters for energy minimization to optimize the initial system geometry and relieve unfavorable atomic contacts.
+  - **`step1.1_equilibration.mdp` – `step1.6_equilibration.mdp`**: Define the parameters for the sequential equilibration stages used to stabilize the system before production simulation.
+  - **`step_production.mdp`**: Specifies the simulation parameters for the production molecular dynamics run.
+  - **`mdout.mdp`**: Contains the processed molecular dynamics parameters generated during GROMACS preprocessing.
+
+- **`Umbrella_Sampling_MD/`**: Contains the GROMACS parameter files used for umbrella sampling simulations to investigate the free-energy profile along a selected reaction coordinate.
+  - **`equilibration_umbrella.mdp`**: Defines the equilibration parameters for the umbrella sampling windows before production sampling.
+  - **`pull.mdp`**: Specifies the pulling parameters used to generate configurations along the selected reaction coordinate for umbrella sampling.
+  - **`production_umbrella.mdp`**: Defines the production simulation parameters for collecting sampling data in individual umbrella windows for subsequent potential of mean force (PMF) calculations.
 
 - # Simulation Details
 ## LAMP2A System
@@ -90,6 +106,12 @@ This repository contains molecular dynamics (MD) simulation datasets for three i
 - **DSSP** (Secondary structure analysis)
 
 - **python** (Trajectory analysis)
+
+- ### Analysis Scripts
+
+- **`tilt_angle_analysis.tcl`**: VMD Tcl script for analyzing the protein trimer tilt angle relative to the membrane plane or a defined reference axis.
+
+- **`trimer_cavity_and_lipid_insertion_analysis.py`**: Python script for analyzing the trimer cavity and lipid insertion, enabling the characterization of lipid penetration and cavity-associated structural features during molecular dynamics simulations.
 
 # Objective and Significance
 This study systematically compare the monomeric and trimeric assemblies of all three LAMP2 isoforms to elucidate the structural basis of CMA specificity. Using 33 μs of all-atom molecular dynamics simulations, free-energy calculations based on umbrella sampling, and computational protein redesign approach, we demonstrate that LAMP2A exhibits a significantly greater propensity to form stable trimeric assemblies compared to the LAMP2B and LAMP2C.
