@@ -168,7 +168,6 @@ The findings indicate that **LAMP2A exhibits a greater propensity to form stable
 2. Use the corresponding molecular structures, topology files, force-field dependencies, and `.mdp` parameter files.
 3. Ensure that a compatible version of **GROMACS** is installed.
 4. Use the provided trajectories and analysis scripts to perform structural and dynamical analyses.
-5. Document any modifications to simulation parameters, analysis selections, or software versions to support reproducibility.
 
 > **Note:** The `.mdp` files specify simulation settings, whereas the `.tpr` file contains compiled simulation inputs generated during GROMACS preprocessing. The `.xtc` file contains trajectory coordinates and may require an appropriate structure or topology file for analysis.
 
